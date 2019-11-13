@@ -1,0 +1,25 @@
+apiVersion: v2
+stacks:
+- default-image: nodejs-express-lite
+  default-pipeline: default
+  default-template: simple
+  description: Runnable starter stack, copy to create a new stack
+  id: nodejs-express-lite
+  images:
+  - id: nodejs-express-lite
+    image: jxadro/nodejs-express-lite:1.0
+  language: nodejs
+  license: Apache-2.0
+  maintainers:
+  - email: jxadro@test.com
+    github-id: jxadro
+    name: jxadro
+  name: Nodejs Express Lite
+  pipelines:
+  - id: default
+    sha256: 400b08dd1c9c0293c8c535037df3dc3dbafb0b7448eeeb098f5049ba600b742f
+    url: file:///demo/collections/ci/assets/incubator.common.pipeline.default.tar.gz
+  templates:
+  - id: simple
+    url: file:///demo/collections/ci/assets/incubator.nodejs-express-lite.v1.0.templates.simple.tar.gz
+  version: 1

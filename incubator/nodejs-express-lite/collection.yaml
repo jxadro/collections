@@ -1,0 +1,5 @@
+default-image: nodejs-express-lite
+default-pipeline: default
+images:
+- id: nodejs-express-lite
+  image: $IMAGE_REGISTRY_ORG/nodejs-express-lite:1.0

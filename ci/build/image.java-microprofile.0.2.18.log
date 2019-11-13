@@ -1,0 +1,81 @@
+>  docker build --build-arg GIT_ORG_REPO=kabanero-io/collections --build-arg IMAGE_REGISTRY_ORG=kabanero --build-arg STACK_ID=java-microprofile --build-arg MAJOR_VERSION=0 --build-arg MINOR_VERSION=2 --build-arg PATCH_VERSION=18 --label org.opencontainers.image.created=2019-11-13T09:41:28-0500 --label org.opencontainers.image.version=0.2.18 --label org.opencontainers.image.revision=3ce45efe22fca6b7dab560075785d50fb4d85b6a --label appsody.stack=kabanero/java-microprofile:0.2.18 -t kabanero/java-microprofile -t kabanero/java-microprofile:0.2.18 -t kabanero/java-microprofile:0 -t kabanero/java-microprofile:0.2 -f /demo/collections/incubator/java-microprofile/image/Dockerfile-stack /demo/collections/incubator/java-microprofile/image
+Sending build context to Docker daemon  44.03kB
+Step 1/42 : FROM kabanero/ubi8-maven
+latest: Pulling from kabanero/ubi8-maven
+e61d8721e62e: Already exists
+c585fd5093c6: Already exists
+3db26d862aa4: Already exists
+b8549e1490f3: Already exists
+c2f5d76c4dd7: Already exists
+50d4ee53d49b: Already exists
+f6ad6c8bd0c0: Already exists
+Digest: sha256:6f94f20933a5d413f97b29434871040526d6241a62d44444e4bc755540f0c82e
+Status: Downloaded newer image for kabanero/ubi8-maven:latest
+ ---> 95e0c9998f3f
+Step 2/42 : LABEL vendor="Kabanero"     name="kabanero/java-microprofile"     version="0.2.10"     summary="Image for Kabanero java-microprofile development"     description="This image contains the Kabanero development stack for the java-microprofile collection"
+ ---> Running in e3b98e028ecc
+Removing intermediate container e3b98e028ecc
+ ---> f3020bba2fb9
+Step 3/42 : USER root
+ ---> Running in 27923ab8533d
+Removing intermediate container 27923ab8533d
+ ---> 62981f9e974e
+Step 4/42 : RUN groupadd --gid 1000 java_group  && useradd --uid 1000 --gid java_group --shell /bin/bash --create-home java_user
+ ---> Running in a9e40a227e6d
+Removing intermediate container a9e40a227e6d
+ ---> b39a09712087
+Step 5/42 : COPY ./LICENSE /licenses/
+ ---> 2603da317a07
+Step 6/42 : COPY ./project /project
+ ---> d8152392ca64
+Step 7/42 : COPY ./config /config
+ ---> 2512973eb70b
+Step 8/42 : RUN  /project/util/check_version build
+ ---> Running in ea1edaa8e193
+Removing intermediate container ea1edaa8e193
+ ---> 721e225e10b4
+Step 9/42 : WORKDIR /project/
+ ---> Running in ad137e335b16
+Removing intermediate container ad137e335b16
+ ---> 53535dc54133
+Step 10/42 : RUN mkdir -p /mvn/repository
+ ---> Running in 34e3bc3bc01e
+Removing intermediate container 34e3bc3bc01e
+ ---> 9a04a8e99cb4
+Step 11/42 : RUN mvn -B -Dmaven.repo.local=/mvn/repository -N io.takari:maven:wrapper -Dmaven=$(mvn help:evaluate -Dexpression=maven.version -q -DforceStdout)
+ ---> Running in ec3384df2ef4
+[INFO] Scanning for projects...
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/net/wasdev/wlp/maven/parent/liberty-maven-app-parent/2.6.4/liberty-maven-app-parent-2.6.4.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/net/wasdev/wlp/maven/parent/liberty-maven-app-parent/2.6.4/liberty-maven-app-parent-2.6.4.pom (5.0 kB at 7.9 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/net/wasdev/wlp/maven/liberty-maven/2.6.4/liberty-maven-2.6.4.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/net/wasdev/wlp/maven/liberty-maven/2.6.4/liberty-maven-2.6.4.pom (2.0 kB at 69 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/net/wasdev/maven/parent/parent/1.4/parent-1.4.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/net/wasdev/maven/parent/parent/1.4/parent-1.4.pom (5.6 kB at 187 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/openliberty/features/features-bom/19.0.0.8/features-bom-19.0.0.8.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/openliberty/features/features-bom/19.0.0.8/features-bom-19.0.0.8.pom (104 kB at 2.7 MB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/takari/maven/maven-metadata.xml
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/takari/maven/maven-metadata.xml (724 B at 36 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/takari/maven/0.7.6/maven-0.7.6.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/takari/maven/0.7.6/maven-0.7.6.pom (2.3 kB at 130 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/takari/takari/27/takari-27.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/takari/takari/27/takari-27.pom (14 kB at 849 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/takari/maven/0.7.6/maven-0.7.6.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/takari/maven/0.7.6/maven-0.7.6.jar (9.0 kB at 452 kB/s)
+[INFO] 
+[INFO] -------------------< dev.appsody:java-microprofile >--------------------
+[INFO] Building java-microprofile 0.2.17
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven:0.7.6:wrapper (default-cli) @ java-microprofile ---
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/takari/maven-wrapper/0.5.5/maven-wrapper-0.5.5.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/takari/maven-wrapper/0.5.5/maven-wrapper-0.5.5.pom (2.4 kB at 105 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/takari/takari-archiver/0.1.9/takari-archiver-0.1.9.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/takari/takari-archiver/0.1.9/takari-archiver-0.1.9.pom (1.8 kB at 100 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/takari/takari/15/takari-15.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/takari/takari/15/takari-15.pom (15 kB at 760 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/14.0.1/guava-14.0.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/14.0.1/guava-14.0.1.pom (5.4 kB at 299 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/14.0.1/guava-parent-14.0.1.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/14.0.1/guava-parent-14.0.1.pom (2.6 kB at 160 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/7/oss-parent-7.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/7/oss-parent-7.pom (4.8 kB at 254 kB/s)

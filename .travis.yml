@@ -1,0 +1,34 @@
+language: generic
+
+go:
+  - 1.12.x
+
+os: linux
+dist: bionic
+
+services:
+  - docker
+
+branches:
+  except:
+  - update-from-appsody
+
+before_install:
+    - sudo snap install yq
+
+script:
+  - . ./ci/build.sh
+
+# note before_deploy will run before each deploy provider
+before_deploy:
+  - . ./ci/release.sh
+
+deploy:
+  provider: releases
+  skip_cleanup: true
+  api_key: $GITHUB_TOKEN
+  file: ci/release/*
+  file_glob: true
+  on:
+    tags: true
+    repo: kabanero-io/collections

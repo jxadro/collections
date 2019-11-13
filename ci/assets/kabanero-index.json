@@ -1,0 +1,13 @@
+[
+    {
+        "displayName": "Kabanero Nodejs Express Lite template",
+        "description": "Runnable starter stack, copy to create a new stack",
+        "language": "nodejs",
+        "projectType": "appsodyExtension",
+        "projectStyle": "Appsody",
+        "location": "https://github.com/kabanero-io/collections/releases/download/0.2.0/incubator.nodejs-express-lite.v0.1.1.templates.simple.tar.gz",
+        "links": {
+            "self": "/devfiles/nodejs-express-lite/devfile.yaml"
+        }
+    }
+]

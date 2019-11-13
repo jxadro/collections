@@ -1,0 +1,10 @@
+name: Nodejs Express Lite
+version: 1.0
+description: Runnable starter stack, copy to create a new stack
+license: Apache-2.0
+language: nodejs
+maintainers: 
+  - name: jxadro
+    email: jxadro@test.com
+    github-id: jxadro
+default-template: simple

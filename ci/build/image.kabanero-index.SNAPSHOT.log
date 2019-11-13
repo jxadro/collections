@@ -1,0 +1,48 @@
+>  docker build --build-arg NGINX_IMAGE=nginx-ubi -t jxadro/kabanero-index -t jxadro/kabanero-index:SNAPSHOT -f /demo/collections/ci/nginx/Dockerfile /demo/collections/ci
+Sending build context to Docker daemon  139.3kB
+Step 1/14 : ARG NGINX_IMAGE=nginx:stable-alpine
+Step 2/14 : FROM $NGINX_IMAGE
+ ---> 1c596a4f0639
+Step 3/14 : COPY nginx/nginx.conf  /etc/nginx/nginx.conf
+ ---> Using cache
+ ---> 39a8977157b9
+Step 4/14 : COPY nginx/nginx-ssl.conf  /etc/nginx/nginx-ssl.conf
+ ---> Using cache
+ ---> 8c5e3359eade
+Step 5/14 : COPY nginx/startup.sh  /opt/startup.sh
+ ---> Using cache
+ ---> 30debbf152e9
+Step 6/14 : COPY build/prefetch    /opt/www/public
+ ---> Using cache
+ ---> cd29bd713c21
+Step 7/14 : COPY assets            /opt/www/public
+ ---> 2e0caaf98c85
+Step 8/14 : COPY build/index-src   /opt/www/public
+ ---> 3cbaeea1b315
+Step 9/14 : RUN rm /opt/www/public/*-local.yaml
+ ---> Running in e2daa34168b1
+Removing intermediate container e2daa34168b1
+ ---> 7bd61cb86ff8
+Step 10/14 : EXPOSE 8080
+ ---> Running in 362562d397d0
+Removing intermediate container 362562d397d0
+ ---> f59689223c27
+Step 11/14 : EXPOSE 8443
+ ---> Running in 3dee33e9585b
+Removing intermediate container 3dee33e9585b
+ ---> 4f951baf95f6
+Step 12/14 : RUN touch /var/run/nginx.pid &&   chown -R nginx:0 /var/run/nginx.pid /var/cache/nginx /opt/www/public /etc/nginx /run &&   chmod -R g=u /opt/www/public /var/cache/nginx /etc/nginx /var/run/nginx.pid /run
+ ---> Running in 127e0eb1480f
+Removing intermediate container 127e0eb1480f
+ ---> 8f5180c87e60
+Step 13/14 : USER nginx
+ ---> Running in 0710adfad701
+Removing intermediate container 0710adfad701
+ ---> ee51c3fa08cf
+Step 14/14 : ENTRYPOINT ["/opt/startup.sh"]
+ ---> Running in 836e1164ed75
+Removing intermediate container 836e1164ed75
+ ---> cdba3e554cf6
+Successfully built cdba3e554cf6
+Successfully tagged jxadro/kabanero-index:latest
+Successfully tagged jxadro/kabanero-index:SNAPSHOT

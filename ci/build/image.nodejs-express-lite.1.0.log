@@ -1,0 +1,87 @@
+>  docker build --build-arg GIT_ORG_REPO=kabanero-io/collections --build-arg IMAGE_REGISTRY_ORG=jxadro --build-arg STACK_ID=nodejs-express-lite --build-arg MAJOR_VERSION=1 --build-arg MINOR_VERSION=0 --build-arg PATCH_VERSION= --label org.opencontainers.image.created=2019-11-13T18:20:50-0500 --label org.opencontainers.image.version=1.0 --label org.opencontainers.image.revision=3ce45efe22fca6b7dab560075785d50fb4d85b6a --label appsody.stack=jxadro/nodejs-express-lite:1.0 -t jxadro/nodejs-express-lite -t jxadro/nodejs-express-lite:1.0 -t jxadro/nodejs-express-lite:1 -t jxadro/nodejs-express-lite:1.0 -f /demo/collections/incubator/nodejs-express-lite/image/Dockerfile-stack /demo/collections/incubator/nodejs-express-lite/image
+Sending build context to Docker daemon   21.5kB
+Step 1/26 : FROM jxadro/nodebase:1.2
+ ---> bc4c6c45f885
+Step 2/26 : ENV APPSODY_MOUNTS=/:/project/user-app
+ ---> Using cache
+ ---> 5e2f8f5ba7be
+Step 3/26 : ENV APPSODY_DEPS=/project/user-app/node_modules
+ ---> Using cache
+ ---> 1ea8e61e7a2d
+Step 4/26 : ENV APPSODY_WATCH_DIR=/project/user-app
+ ---> Using cache
+ ---> 2ab134df57ec
+Step 5/26 : ENV APPSODY_WATCH_IGNORE_DIR=/project/user-app/node_modules
+ ---> Using cache
+ ---> f02027a6e6e4
+Step 6/26 : ENV APPSODY_WATCH_REGEX="^.*.js$"
+ ---> Using cache
+ ---> b59f452ddfae
+Step 7/26 : ENV APPSODY_PREP="npm install"
+ ---> Using cache
+ ---> 603f2c429ebb
+Step 8/26 : ENV APPSODY_RUN="npm start"
+ ---> Using cache
+ ---> 4b77524e015c
+Step 9/26 : ENV APPSODY_RUN_ON_CHANGE=$APPSODY_RUN
+ ---> Using cache
+ ---> 4853a366470b
+Step 10/26 : ENV APPSODY_RUN_KILL=true
+ ---> Using cache
+ ---> 2aacb5b29df9
+Step 11/26 : ENV APPSODY_DEBUG="npm run debug"
+ ---> Using cache
+ ---> 10383ccf6f7a
+Step 12/26 : ENV APPSODY_DEBUG_ON_CHANGE=$APPSODY_DEBUG
+ ---> Using cache
+ ---> 6e76c5f7a391
+Step 13/26 : ENV APPSODY_DEBUG_KILL=true
+ ---> Using cache
+ ---> 869740c384ae
+Step 14/26 : ENV APPSODY_TEST="/bin/bash /project/userapp/tests/test.sh"
+ ---> Using cache
+ ---> ee364dc303a7
+Step 15/26 : ENV APPSODY_TEST_ON_CHANGE=$APPSODY_TEST
+ ---> Using cache
+ ---> c80f6d03f9eb
+Step 16/26 : ENV APPSODY_TEST_KILL=false
+ ---> Using cache
+ ---> 6a2ee344e3a8
+Step 17/26 : COPY ./LICENSE /licenses/
+ ---> Using cache
+ ---> 541c1f59a481
+Step 18/26 : COPY ./project /project
+ ---> Using cache
+ ---> d0e8fb3812c1
+Step 19/26 : COPY ./config /config
+ ---> Using cache
+ ---> b88ddfdea58d
+Step 20/26 : WORKDIR /project/user-app
+ ---> Using cache
+ ---> 2c0f1e1698e5
+Step 21/26 : ENV PORT 8080
+ ---> Using cache
+ ---> da069c0b3c67
+Step 22/26 : EXPOSE 8080
+ ---> Using cache
+ ---> 34da8530b36b
+Step 23/26 : LABEL appsody.stack=jxadro/nodejs-express-lite:1.0
+ ---> Using cache
+ ---> def43c285f38
+Step 24/26 : LABEL org.opencontainers.image.created=2019-11-13T18:20:50-0500
+ ---> Running in ca0dc68fed23
+Removing intermediate container ca0dc68fed23
+ ---> b26213f4819d
+Step 25/26 : LABEL org.opencontainers.image.revision=3ce45efe22fca6b7dab560075785d50fb4d85b6a
+ ---> Running in af6ac99a2386
+Removing intermediate container af6ac99a2386
+ ---> ee6df40cc3a1
+Step 26/26 : LABEL org.opencontainers.image.version=1.0
+ ---> Running in 4a314f903e3c
+Removing intermediate container 4a314f903e3c
+ ---> 64b2a6c88beb
+[Warning] One or more build-args [IMAGE_REGISTRY_ORG MAJOR_VERSION MINOR_VERSION PATCH_VERSION STACK_ID GIT_ORG_REPO] were not consumed
+Successfully built 64b2a6c88beb
+Successfully tagged jxadro/nodejs-express-lite:latest
+Successfully tagged jxadro/nodejs-express-lite:1.0
+Successfully tagged jxadro/nodejs-express-lite:1
