@@ -7,7 +7,7 @@ stacks:
   id: nodejs-express-lite
   images:
   - id: nodejs-express-lite
-    image: jxadro/nodejs-express-lite:1.0
+    image: docker.io/jxadro/nodejs-express-lite:1.0
   language: nodejs
   license: Apache-2.0
   maintainers:
@@ -17,7 +17,7 @@ stacks:
   name: Nodejs Express Lite
   pipelines:
   - id: default
-    sha256: 400b08dd1c9c0293c8c535037df3dc3dbafb0b7448eeeb098f5049ba600b742f
+    sha256: e74629281084d4df4b9983da68ef713ed7f17c26e7c44594744500354b1e4f7b
     url: {{EXTERNAL_URL}}/incubator.common.pipeline.default.tar.gz
   templates:
   - id: simple

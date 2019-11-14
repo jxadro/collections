@@ -1,4 +1,4 @@
->  docker build --build-arg NGINX_IMAGE=nginx-ubi -t jxadro/kabanero-index -t jxadro/kabanero-index:SNAPSHOT -f /demo/collections/ci/nginx/Dockerfile /demo/collections/ci
+>  docker build --build-arg NGINX_IMAGE=nginx-ubi -t docker.io/jxadro/kabanero-index -t docker.io/jxadro/kabanero-index:SNAPSHOT -f /demo/collections/ci/nginx/Dockerfile /demo/collections/ci
 Sending build context to Docker daemon  139.3kB
 Step 1/14 : ARG NGINX_IMAGE=nginx:stable-alpine
 Step 2/14 : FROM $NGINX_IMAGE
@@ -16,33 +16,33 @@ Step 6/14 : COPY build/prefetch    /opt/www/public
  ---> Using cache
  ---> cd29bd713c21
 Step 7/14 : COPY assets            /opt/www/public
- ---> 2e0caaf98c85
+ ---> 13e8148793ab
 Step 8/14 : COPY build/index-src   /opt/www/public
- ---> 3cbaeea1b315
+ ---> 054b62429eb0
 Step 9/14 : RUN rm /opt/www/public/*-local.yaml
- ---> Running in e2daa34168b1
-Removing intermediate container e2daa34168b1
- ---> 7bd61cb86ff8
+ ---> Running in c64059138eca
+Removing intermediate container c64059138eca
+ ---> bf59a49e97ac
 Step 10/14 : EXPOSE 8080
- ---> Running in 362562d397d0
-Removing intermediate container 362562d397d0
- ---> f59689223c27
+ ---> Running in dbca381eff01
+Removing intermediate container dbca381eff01
+ ---> a7d7f644bc8d
 Step 11/14 : EXPOSE 8443
- ---> Running in 3dee33e9585b
-Removing intermediate container 3dee33e9585b
- ---> 4f951baf95f6
+ ---> Running in 46c99ea18fc2
+Removing intermediate container 46c99ea18fc2
+ ---> 931bf735de33
 Step 12/14 : RUN touch /var/run/nginx.pid &&   chown -R nginx:0 /var/run/nginx.pid /var/cache/nginx /opt/www/public /etc/nginx /run &&   chmod -R g=u /opt/www/public /var/cache/nginx /etc/nginx /var/run/nginx.pid /run
- ---> Running in 127e0eb1480f
-Removing intermediate container 127e0eb1480f
- ---> 8f5180c87e60
+ ---> Running in 6373c04f091c
+Removing intermediate container 6373c04f091c
+ ---> bae1e6e61e4d
 Step 13/14 : USER nginx
- ---> Running in 0710adfad701
-Removing intermediate container 0710adfad701
- ---> ee51c3fa08cf
+ ---> Running in 1c5774adfdc4
+Removing intermediate container 1c5774adfdc4
+ ---> 9e5cf2d658a8
 Step 14/14 : ENTRYPOINT ["/opt/startup.sh"]
- ---> Running in 836e1164ed75
-Removing intermediate container 836e1164ed75
- ---> cdba3e554cf6
-Successfully built cdba3e554cf6
+ ---> Running in 808a057bfa3f
+Removing intermediate container 808a057bfa3f
+ ---> cd1d26aae1c5
+Successfully built cd1d26aae1c5
 Successfully tagged jxadro/kabanero-index:latest
 Successfully tagged jxadro/kabanero-index:SNAPSHOT

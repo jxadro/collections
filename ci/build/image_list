@@ -1,6 +1,6 @@
-jxadro/nodejs-express-lite
-jxadro/nodejs-express-lite:1.0
-jxadro/nodejs-express-lite:1
-jxadro/nodejs-express-lite:1.0
-jxadro/kabanero-index
-jxadro/kabanero-index:SNAPSHOT
+docker.io/jxadro/nodejs-express-lite
+docker.io/jxadro/nodejs-express-lite:1.0
+docker.io/jxadro/nodejs-express-lite:1
+docker.io/jxadro/nodejs-express-lite:1.0
+docker.io/jxadro/kabanero-index
+docker.io/jxadro/kabanero-index:SNAPSHOT

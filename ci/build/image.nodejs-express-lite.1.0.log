@@ -1,4 +1,4 @@
->  docker build --build-arg GIT_ORG_REPO=kabanero-io/collections --build-arg IMAGE_REGISTRY_ORG=jxadro --build-arg STACK_ID=nodejs-express-lite --build-arg MAJOR_VERSION=1 --build-arg MINOR_VERSION=0 --build-arg PATCH_VERSION= --label org.opencontainers.image.created=2019-11-13T18:20:50-0500 --label org.opencontainers.image.version=1.0 --label org.opencontainers.image.revision=3ce45efe22fca6b7dab560075785d50fb4d85b6a --label appsody.stack=jxadro/nodejs-express-lite:1.0 -t jxadro/nodejs-express-lite -t jxadro/nodejs-express-lite:1.0 -t jxadro/nodejs-express-lite:1 -t jxadro/nodejs-express-lite:1.0 -f /demo/collections/incubator/nodejs-express-lite/image/Dockerfile-stack /demo/collections/incubator/nodejs-express-lite/image
+>  docker build --build-arg GIT_ORG_REPO=jxadro/collections --build-arg IMAGE_REGISTRY_ORG=docker.io/jxadro --build-arg STACK_ID=nodejs-express-lite --build-arg MAJOR_VERSION=1 --build-arg MINOR_VERSION=0 --build-arg PATCH_VERSION= --label org.opencontainers.image.created=2019-11-14T04:08:47-0500 --label org.opencontainers.image.version=1.0 --label org.opencontainers.image.revision=20d7a8753c6d9f3f3199b0d0ab7e937e889ab884 --label appsody.stack=docker.io/jxadro/nodejs-express-lite:1.0 -t docker.io/jxadro/nodejs-express-lite -t docker.io/jxadro/nodejs-express-lite:1.0 -t docker.io/jxadro/nodejs-express-lite:1 -t docker.io/jxadro/nodejs-express-lite:1.0 -f /demo/collections/incubator/nodejs-express-lite/image/Dockerfile-stack /demo/collections/incubator/nodejs-express-lite/image
 Sending build context to Docker daemon   21.5kB
 Step 1/26 : FROM jxadro/nodebase:1.2
  ---> bc4c6c45f885
@@ -65,23 +65,23 @@ Step 21/26 : ENV PORT 8080
 Step 22/26 : EXPOSE 8080
  ---> Using cache
  ---> 34da8530b36b
-Step 23/26 : LABEL appsody.stack=jxadro/nodejs-express-lite:1.0
+Step 23/26 : LABEL appsody.stack=docker.io/jxadro/nodejs-express-lite:1.0
  ---> Using cache
- ---> def43c285f38
-Step 24/26 : LABEL org.opencontainers.image.created=2019-11-13T18:20:50-0500
- ---> Running in ca0dc68fed23
-Removing intermediate container ca0dc68fed23
- ---> b26213f4819d
-Step 25/26 : LABEL org.opencontainers.image.revision=3ce45efe22fca6b7dab560075785d50fb4d85b6a
- ---> Running in af6ac99a2386
-Removing intermediate container af6ac99a2386
- ---> ee6df40cc3a1
+ ---> 099849ac7f58
+Step 24/26 : LABEL org.opencontainers.image.created=2019-11-14T04:08:47-0500
+ ---> Running in 43bdee5498af
+Removing intermediate container 43bdee5498af
+ ---> b015fc18111b
+Step 25/26 : LABEL org.opencontainers.image.revision=20d7a8753c6d9f3f3199b0d0ab7e937e889ab884
+ ---> Running in 3d86e79583a0
+Removing intermediate container 3d86e79583a0
+ ---> 489d0042a0d0
 Step 26/26 : LABEL org.opencontainers.image.version=1.0
- ---> Running in 4a314f903e3c
-Removing intermediate container 4a314f903e3c
- ---> 64b2a6c88beb
-[Warning] One or more build-args [IMAGE_REGISTRY_ORG MAJOR_VERSION MINOR_VERSION PATCH_VERSION STACK_ID GIT_ORG_REPO] were not consumed
-Successfully built 64b2a6c88beb
+ ---> Running in e36715a8afbd
+Removing intermediate container e36715a8afbd
+ ---> 8a0f2414bde0
+[Warning] One or more build-args [GIT_ORG_REPO IMAGE_REGISTRY_ORG MAJOR_VERSION MINOR_VERSION PATCH_VERSION STACK_ID] were not consumed
+Successfully built 8a0f2414bde0
 Successfully tagged jxadro/nodejs-express-lite:latest
 Successfully tagged jxadro/nodejs-express-lite:1.0
 Successfully tagged jxadro/nodejs-express-lite:1
