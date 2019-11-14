@@ -16,33 +16,33 @@ Step 6/14 : COPY build/prefetch    /opt/www/public
  ---> Using cache
  ---> cd29bd713c21
 Step 7/14 : COPY assets            /opt/www/public
- ---> 13e8148793ab
+ ---> d4cc9ab02634
 Step 8/14 : COPY build/index-src   /opt/www/public
- ---> 054b62429eb0
+ ---> df5715e326cc
 Step 9/14 : RUN rm /opt/www/public/*-local.yaml
- ---> Running in c64059138eca
-Removing intermediate container c64059138eca
- ---> bf59a49e97ac
+ ---> Running in f3d8b499a560
+Removing intermediate container f3d8b499a560
+ ---> 28e7e837f9bb
 Step 10/14 : EXPOSE 8080
- ---> Running in dbca381eff01
-Removing intermediate container dbca381eff01
- ---> a7d7f644bc8d
+ ---> Running in bfa1672875c8
+Removing intermediate container bfa1672875c8
+ ---> 545358eef70d
 Step 11/14 : EXPOSE 8443
- ---> Running in 46c99ea18fc2
-Removing intermediate container 46c99ea18fc2
- ---> 931bf735de33
+ ---> Running in 6f333afa2e60
+Removing intermediate container 6f333afa2e60
+ ---> e7324d793e97
 Step 12/14 : RUN touch /var/run/nginx.pid &&   chown -R nginx:0 /var/run/nginx.pid /var/cache/nginx /opt/www/public /etc/nginx /run &&   chmod -R g=u /opt/www/public /var/cache/nginx /etc/nginx /var/run/nginx.pid /run
- ---> Running in 6373c04f091c
-Removing intermediate container 6373c04f091c
- ---> bae1e6e61e4d
+ ---> Running in 1f769c76d11a
+Removing intermediate container 1f769c76d11a
+ ---> 7f17d29ad1f3
 Step 13/14 : USER nginx
- ---> Running in 1c5774adfdc4
-Removing intermediate container 1c5774adfdc4
- ---> 9e5cf2d658a8
+ ---> Running in 968b5591c4f8
+Removing intermediate container 968b5591c4f8
+ ---> e9ae2af00248
 Step 14/14 : ENTRYPOINT ["/opt/startup.sh"]
- ---> Running in 808a057bfa3f
-Removing intermediate container 808a057bfa3f
- ---> cd1d26aae1c5
-Successfully built cd1d26aae1c5
+ ---> Running in 4a700c9bf8b0
+Removing intermediate container 4a700c9bf8b0
+ ---> 68a5a1237582
+Successfully built 68a5a1237582
 Successfully tagged jxadro/kabanero-index:latest
 Successfully tagged jxadro/kabanero-index:SNAPSHOT

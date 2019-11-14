@@ -5,7 +5,7 @@
         "language": "nodejs",
         "projectType": "appsodyExtension",
         "projectStyle": "Appsody",
-        "location": "https://github.com/jxadro/collections/releases/download/v0.1.0/incubator.nodejs-express-lite.v1.0.templates.simple.tar.gz",
+        "location": "https://github.com/jxadro/collections/releases/download/v0.2.0/incubator.nodejs-express-lite.v1.0.templates.simple.tar.gz",
         "links": {
             "self": "/devfiles/nodejs-express-lite/devfile.yaml"
         }

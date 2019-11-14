@@ -17,7 +17,7 @@ stacks:
   name: Nodejs Express Lite
   pipelines:
   - id: default
-    sha256: e74629281084d4df4b9983da68ef713ed7f17c26e7c44594744500354b1e4f7b
+    sha256: f82e5e945c38e5d15ebf12793bf2ce46a23744b05b6ea3ac6c62e752b4fc57ca
     url: file:///demo/collections/ci/assets/incubator.common.pipeline.default.tar.gz
   templates:
   - id: simple
